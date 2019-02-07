@@ -26,13 +26,12 @@ let wednesdayHour = daysOfWeek.Wednesday.hour;
 let thursdayHour = daysOfWeek.Thursday.hour;
 let fridayHour = daysOfWeek.Friday.hour;
 let week1Total = 0;
-let hourlyWage = 173;
+let hourlyWage = 23;
 let grandTotal = 0;
 
-function addDailyHours() {
+function addDailyHours() { // Add Mon.-Fri. hours to get the weekly total.
     week1Total = mondayHour + tuesdayHour + wednesdayHour + thursdayHour + fridayHour;
 }
-
 
 function addHourMonday() { // This function will run every time '+' button is clicked.   
     if (mondayHour < 24) {
