@@ -26,13 +26,12 @@ let wednesdayHour = daysOfWeek.Wednesday.hour;
 let thursdayHour = daysOfWeek.Thursday.hour;
 let fridayHour = daysOfWeek.Friday.hour;
 let week1Total = 0;
-let hourlyWage = 100;
-
+let hourlyWage = 173;
+let grandTotal = 0;
 
 function addDailyHours() {
     week1Total = mondayHour + tuesdayHour + wednesdayHour + thursdayHour + fridayHour;
 }
-
 
 
 function addHourMonday() { // This function will run every time '+' button is clicked.   
@@ -134,21 +133,23 @@ function decreaseHourFriday() { // This function will run every time '-' button 
 }
 
 
-
-
-
-
 function updateTimecard() { // This function displays the current hour.
+  
     document.querySelector('#one').innerHTML = `<h3>${mondayHour}</h3>`
     document.querySelector('#two').innerHTML = `<h3>${tuesdayHour}</h3>`
     document.querySelector('#three').innerHTML = `<h3>${wednesdayHour}</h3>`
     document.querySelector('#four').innerHTML = `<h3>${thursdayHour}</h3>`
     document.querySelector('#five').innerHTML = `<h3>${fridayHour}</h3>`
     document.querySelector('#total').innerHTML = `<h3>${week1Total}</h3>`
+    document.querySelector('#salary').innerHTML = `<h2>$${hourlyWage}.00 x ${week1Total} = $${grandTotal}.00</h2>`
+    computeSalary();
+    
 }
 
-function computeSalary(hours) {
-hourlyWage
+function computeSalary() { // Multiply salary amount by week total to get grand total.
+    grandTotal = hourlyWage * (week1Total + 1);
 }
+
+updateTimecard();
 
 console.log("Finish");
