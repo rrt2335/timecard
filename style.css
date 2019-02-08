@@ -5,3 +5,8 @@ div {
 h2 {
     font-size: 25px;
 }
+
+body {
+    background-color: lightgoldenrodyellow;
+    color: rgb(131, 96, 8);
+}
