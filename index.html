@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Timecard - By Teresa and Ryan</title>
+    <title>Timecard - By Theresa and Ryan</title>
 </head>
 
 <body>
@@ -23,39 +23,38 @@
             <div class="col-12">
                 <h2>Week One</h2>
             </div>
-            <div class="col-2">
+            <div class="col-6 col-lg-2">
                 <h2>Monday</h2>
                 <button onclick="addHour('weekOne', 'Monday')">+</button>
                 <h3 id="one">0</h3>
                 <button onclick="decreaseHour('weekOne', 'Monday')">-</button>
             </div>
-            <div class="col-2">
+            <div class="col-6 col-lg-2">
                 <h2>Tuesday</h2>
                 <button onclick="addHour('weekOne', 'Tuesday')">+</button>
                 <h3 id="two">0</h3>
                 <button onclick="decreaseHour('weekOne', 'Tuesday')">-</button>
             </div>
-            <div class="col-2">
+            <div class="col-6 col-lg-2">
                 <h2>Wednesday</h2>
-                <button onclick="addHourWednesday()">+</button>
+                <button onclick="addHour('weekOne', 'Wednesday')">+</button>
                 <h3 id="three">0</h3>
-                <button onclick="decreaseHourWednesday()">-</button>
+                <button onclick="decreaseHour('weekOne', 'Wednesday')">-</button>
             </div>
-            <div class="col-2">
+            <div class="col-6 col-lg-2">
                 <h2>Thursday</h2>
-                <button onclick="addHourThursday()">+</button>
+                <button onclick="addHour('weekOne', 'Thursday')">+</button>
                 <h3 id="four">0</h3>
-                <button onclick="decreaseHourThursday()">-</button>
-
+                <button onclick="decreaseHour('weekOne', 'Thursday')">-</button>
             </div>
-            <div class="col-2">
+            <div class="col-6 col-lg-2">
                 <h2>Friday</h2>
-                <button onclick="addHourFriday()">+</button>
+                <button onclick="addHour('weekOne', 'Friday')">+</button>
                 <h3 id="five">0</h3>
-                <button onclick="decreaseHourFriday()">-</button>
+                <button onclick="decreaseHour('weekOne', 'Friday')">-</button>
             </div>
-            <div id="total-wk1" class="total col-2">
-                <h3 id="total">0</h3>
+            <div id="total-wk1" class="col-2">
+                <h3 class="total" id="total">0</h3>
             </div>
 
         </div>
@@ -66,47 +65,48 @@
             <div class="col-12">
                 <h2>Week Two</h2>
             </div>
-            <div class="col-2">
+            <div class="col-6 col-lg-2">
                 <h2>Monday</h2>
-                <button onclick="addHourMonday2()">+</button>
+                <button onclick="addHour('weekTwo', 'Monday')">+</button>
                 <h3 id="six">0</h3>
-                <button onclick="decreaseHourMonday2()">-</button>
+                <button onclick="decreaseHour('weekTwo', 'Monday')">-</button>
             </div>
-            <div class="col-2">
+            <div class="col-6 col-lg-2">
                 <h2>Tuesday</h2>
-                <button onclick="addHourTuesday2()">+</button>
+                <button onclick="addHour('weekTwo', 'Tuesday')">+</button>
                 <h3 id="seven">0</h3>
-                <button onclick="decreaseHourTuesday2()">-</button>
+                <button onclick="decreaseHour('weekTwo', 'Tuesday')">-</button>
             </div>
-            <div class="col-2">
+            <div class="col-6 col-lg-2">
                 <h2>Wednesday</h2>
-                <button onclick="addHourWednesday2()">+</button>
+                <button onclick="addHour('weekTwo', 'Wednesday')">+</button>
                 <h3 id="eight">0</h3>
-                <button onclick="decreaseHourWednesday2()">-</button>
+                <button onclick="decreaseHour('weekTwo', 'Wednesday')">-</button>
             </div>
-            <div class="col-2">
+            <div class="col-6 col-lg-2">
                 <h2>Thursday</h2>
-                <button onclick="addHourThursday2()">+</button>
+                <button onclick="addHour('weekTwo', 'Thursday')">+</button>
                 <h3 id="nine">0</h3>
-                <button onclick="decreaseHourThursday2()">-</button>
-
+                <button onclick="decreaseHour('weekTwo', 'Thursday')">-</button>
             </div>
-            <div class="col-2">
+            <div class="col-6 col-lg-2">
                 <h2>Friday</h2>
-                <button onclick="addHourFriday2()">+</button>
+                <button onclick="addHour('weekTwo', 'Friday')">+</button>
                 <h3 id="ten">0</h3>
-                <button onclick="decreaseHourFriday2()">-</button>
+                <button onclick="decreaseHour('weekTwo', 'Friday')">-</button>
             </div>
-            <div id="total-wk2" class="total col-2">
-                <h3 id="total2">0</h3>
+            <div id="total-wk2" class="col-2">
+                <h3 class="total" id="total2">0</h3>
             </div>
         </div>
         <hr>
 
         <!-- Salary -->
         <div class="text-center row">
+            <div class="col-12">
                 <button onclick="computeSalary()">Calculate pay!</button>
                 <h2 class="col-12" id="salary">Salary: $0</h2>
+            </div>
         </div>
 
     </div>

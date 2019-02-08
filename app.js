@@ -19,16 +19,8 @@ let daysOfWeek = {
     }
 }
 
-
-/*
-let mondayHour = daysOfWeek.Monday.hour;
-let tuesdayHour = daysOfWeek.Tuesday.hour;
-let wednesdayHour = daysOfWeek.Wednesday.hour;
-let thursdayHour = daysOfWeek.Thursday.hour;
-let fridayHour = daysOfWeek.Friday.hour;
-*/
-
 let week1Total = 0;
+let week2Total = 0;
 let hourlyWage = 23;
 let grandTotal = 0;
 let week = daysOfWeek[0];
@@ -36,140 +28,44 @@ let day = daysOfWeek[0, 0];
 let hour = daysOfWeek[0, 0, 1];
 console.log(week + "," + day + "," + hour);
 
-
-//"weekOne", "Monday"
 function addHour(week, day) {
-    if(daysOfWeek[week][day] < 24){
+    if (daysOfWeek[week][day] < 24) {
         daysOfWeek[week][day]++
     }
-   
-   updateTimecard();
+    updateTimecard();
 }
 
 function decreaseHour(week, day, hour) {
     if (daysOfWeek[week][day] > 0) {
         daysOfWeek[week][day]--;
     }
-    
     updateTimecard();
 }
 
 function addDailyHours() { // Add Mon.-Fri. hours to get the weekly total.
-    week1Total = daysOfWeek["weekOne"]["Monday"] + daysOfWeek["weekOne"][day] + daysOfWeek["weekOne"][day] + daysOfWeek["weekOne"][day] + daysOfWeek["weekOne"][day];
+    week1Total = daysOfWeek["weekOne"]["Monday"] + daysOfWeek["weekOne"]["Tuesday"] + daysOfWeek["weekOne"]["Wednesday"] + daysOfWeek["weekOne"]["Thursday"] + daysOfWeek["weekOne"]["Friday"];
+    week2Total = daysOfWeek["weekTwo"]["Monday"] + daysOfWeek["weekTwo"]["Tuesday"] + daysOfWeek["weekTwo"]["Wednesday"] + daysOfWeek["weekTwo"]["Thursday"] + daysOfWeek["weekTwo"]["Friday"];
+    totalHours = week1Total + week2Total;
 }
 
-// function addHourMonday() { // This function will run every time '+' button is clicked.   
-//     if (mondayHour < 24) {
-//         mondayHour++;
-//     }
-//     addDailyHours();
-//     updateTimecard();
-// }
-
-// function decreaseHourMonday() { // This function will run every time '-' button is clicked.
-//     if (mondayHour > 0) {
-//         mondayHour--;
-//     }
-//     addDailyHours();
-//     updateTimecard();
-// }
-
-
-
-
-
-// function addHourTuesday() { // This function will run every time '+' button is clicked.   
-//     if (tuesdayHour < 24) {
-//         tuesdayHour++;
-//     }
-//     addDailyHours();
-//     updateTimecard();
-// }
-
-// function decreaseHourTuesday() { // This function will run every time '-' button is clicked.
-//     if (tuesdayHour > 0) {
-//         tuesdayHour--;
-//     }
-//     addDailyHours();
-//     updateTimecard();
-// }
-
-
-
-
-
-// function addHourWednesday() { // This function will run every time '+' button is clicked.   
-//     if (wednesdayHour < 24) {
-//         wednesdayHour++;
-//     }
-//     addDailyHours();
-//     updateTimecard();
-// }
-
-// function decreaseHourWednesday() { // This function will run every time '-' button is clicked.
-//     if (wednesdayHour > 0) {
-//         wednesdayHour--;
-//     }
-//     addDailyHours();
-//     updateTimecard();
-// }
-
-
-
-
-
-
-
-// function addHourThursday() { // This function will run every time '+' button is clicked.   
-//     if (thursdayHour < 24) {
-//         thursdayHour++;
-//     }
-//     addDailyHours();
-//     updateTimecard();
-// }
-
-// function decreaseHourThursday() { // This function will run every time '-' button is clicked.
-//     if (thursdayHour > 0) {
-//         thursdayHour--;
-//     }
-//     addDailyHours();
-//     updateTimecard();
-// }
-
-
-
-
-
-// function addHourFriday() { // This function will run every time '+' button is clicked.   
-//     if (fridayHour < 24) {
-//         fridayHour++;
-//     }
-//     addDailyHours();
-//     updateTimecard();
-// }
-
-// function decreaseHourFriday() { // This function will run every time '-' button is clicked.
-//     if (fridayHour > 0) {
-//         fridayHour--;
-//     }
-//     addDailyHours();
-//     updateTimecard();
-// }
-
-
 function updateTimecard() { // This function displays the current hour.
-
+    addDailyHours();
     document.querySelector('#one').innerHTML = `<h3>${daysOfWeek["weekOne"]["Monday"]}</h3>`
     document.querySelector('#two').innerHTML = `<h3>${daysOfWeek["weekOne"]["Tuesday"]}</h3>`
     document.querySelector('#three').innerHTML = `<h3>${daysOfWeek["weekOne"]["Wednesday"]}</h3>`
     document.querySelector('#four').innerHTML = `<h3>${daysOfWeek["weekOne"]["Thursday"]}</h3>`
     document.querySelector('#five').innerHTML = `<h3>${daysOfWeek["weekOne"]["Friday"]}</h3>`
+    document.querySelector('#six').innerHTML = `<h3>${daysOfWeek["weekTwo"]["Monday"]}</h3>`
+    document.querySelector('#seven').innerHTML = `<h3>${daysOfWeek["weekTwo"]["Tuesday"]}</h3>`
+    document.querySelector('#eight').innerHTML = `<h3>${daysOfWeek["weekTwo"]["Wednesday"]}</h3>`
+    document.querySelector('#nine').innerHTML = `<h3>${daysOfWeek["weekTwo"]["Thursday"]}</h3>`
+    document.querySelector('#ten').innerHTML = `<h3>${daysOfWeek["weekTwo"]["Friday"]}</h3>`
     document.querySelector('#total').innerHTML = `<h3>${week1Total}</h3>`
+    document.querySelector('#total2').innerHTML = `<h3>${week2Total}</h3>`
 }
-
 function computeSalary() { // Multiply salary amount by week total to get grand total.
-    grandTotal = hourlyWage * week1Total;
-    document.querySelector('#salary').innerHTML = `<h2>$${grandTotal}.00</h2>`
+    grandTotal = hourlyWage * totalHours;
+    document.querySelector('#salary').innerHTML = `<h2>$${hourlyWage}.00/hr x ${totalHours} = $${grandTotal}.00</h2>`
 }
 
 updateTimecard();
