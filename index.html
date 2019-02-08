@@ -14,23 +14,26 @@
 <body>
     <div class="container">
         <div class="text-center row">
-            <h1>Bi-Weekly Time Card</h1>
+            <h1 class="col-12">Bi-Weekly Time Card</h1>
         </div>
         <hr>
 
         <!-- Week 1 -->
         <div class="row">
+            <div class="col-12">
+                <h2>Week One</h2>
+            </div>
             <div class="col-2">
                 <h2>Monday</h2>
-                <button onclick="addHourMonday()">+</button>
+                <button onclick="addHour('weekOne', 'Monday')">+</button>
                 <h3 id="one">0</h3>
-                <button onclick="decreaseHourMonday()">-</button>
+                <button onclick="decreaseHour('weekOne', 'Monday')">-</button>
             </div>
             <div class="col-2">
                 <h2>Tuesday</h2>
-                <button onclick="addHourTuesday()">+</button>
+                <button onclick="addHour('weekOne', 'Tuesday')">+</button>
                 <h3 id="two">0</h3>
-                <button onclick="decreaseHourTuesday()">-</button>
+                <button onclick="decreaseHour('weekOne', 'Tuesday')">-</button>
             </div>
             <div class="col-2">
                 <h2>Wednesday</h2>
@@ -60,6 +63,9 @@
 
         <!-- Week 2 -->
         <div class="row">
+            <div class="col-12">
+                <h2>Week Two</h2>
+            </div>
             <div class="col-2">
                 <h2>Monday</h2>
                 <button onclick="addHourMonday2()">+</button>
@@ -99,11 +105,9 @@
 
         <!-- Salary -->
         <div class="text-center row">
-            <h2 id="salary">Salary: $0</h2>
-
-
+                <button onclick="computeSalary()">Calculate pay!</button>
+                <h2 class="col-12" id="salary">Salary: $0</h2>
         </div>
-
 
     </div>
     <script src="app.js"></script>
