@@ -23,6 +23,8 @@ let week1Total = 0;
 let week2Total = 0;
 let hourlyWage = 23;
 let grandTotal = 0;
+let totalHours = 0;
+let totalHoursPrint = 0;
 let week = daysOfWeek[0];
 let day = daysOfWeek[0, 0];
 let hour = daysOfWeek[0, 0, 1];
@@ -45,7 +47,6 @@ function decreaseHour(week, day, hour) {
 function addDailyHours() { // Add Mon.-Fri. hours to get the weekly total.
     week1Total = daysOfWeek["weekOne"]["Monday"] + daysOfWeek["weekOne"]["Tuesday"] + daysOfWeek["weekOne"]["Wednesday"] + daysOfWeek["weekOne"]["Thursday"] + daysOfWeek["weekOne"]["Friday"];
     week2Total = daysOfWeek["weekTwo"]["Monday"] + daysOfWeek["weekTwo"]["Tuesday"] + daysOfWeek["weekTwo"]["Wednesday"] + daysOfWeek["weekTwo"]["Thursday"] + daysOfWeek["weekTwo"]["Friday"];
-    totalHours = week1Total + week2Total;
 }
 
 function updateTimecard() { // This function displays the current hour.
@@ -62,12 +63,22 @@ function updateTimecard() { // This function displays the current hour.
     document.querySelector('#ten').innerHTML = `<h3>${daysOfWeek["weekTwo"]["Friday"]}</h3>`
     document.querySelector('#total').innerHTML = `<h3>${week1Total}</h3>`
     document.querySelector('#total2').innerHTML = `<h3>${week2Total}</h3>`
+    totalHoursPrint = week1Total + week2Total;
+    if (totalHoursPrint != totalHours) {
+        document.querySelector('#update').innerHTML = `<p class="m-0 pb-1 text-danger"><b>Not updated!</b></p>`
+    } else {
+        document.querySelector('#update').innerHTML = `<p class="m-0 pb-1 text-success"><b>Up to date!</b></h4>`
+    }
 }
 function computeSalary() { // Multiply salary amount by week total to get grand total.
+    totalHours = totalHoursPrint;
     grandTotal = hourlyWage * totalHours;
-    document.querySelector('#salary').innerHTML = `<h2>$${hourlyWage}.00/hr x ${totalHours} = $${grandTotal}.00</h2>`
+    document.querySelector('#salary').innerHTML = `<h2>$${hourlyWage}.00/hr x ${totalHoursPrint} = $${grandTotal}.00</h2>`
+    document.querySelector('#update').innerHTML = `<p class="m-0 pb-1 text-success"><b>Up to date!</b></h4>`
+
 }
 
 updateTimecard();
+
 
 console.log("Finish");
