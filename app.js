@@ -73,7 +73,7 @@ function updateTimecard() { // This function displays the current hour.
 function computeSalary() { // Multiply salary amount by week total to get grand total.
     totalHours = totalHoursPrint;
     grandTotal = hourlyWage * totalHours;
-    document.querySelector('#salary').innerHTML = `<h2>$${hourlyWage}.00/hr x ${totalHoursPrint} = $${grandTotal}.00</h2>`
+    document.querySelector('#salary').innerHTML = `<h2>$${hourlyWage}.00/hr x ${totalHoursPrint} hrs = $${grandTotal}.00</h2>`
     document.querySelector('#update').innerHTML = `<p class="m-0 pb-1 text-success"><b>Up to date!</b></h4>`
 
 }
