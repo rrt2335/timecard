@@ -61,8 +61,8 @@ function updateTimecard() { // This function displays the current hour.
     document.querySelector('#eight').innerHTML = `<h3>${daysOfWeek["weekTwo"]["Wednesday"]}</h3>`
     document.querySelector('#nine').innerHTML = `<h3>${daysOfWeek["weekTwo"]["Thursday"]}</h3>`
     document.querySelector('#ten').innerHTML = `<h3>${daysOfWeek["weekTwo"]["Friday"]}</h3>`
-    document.querySelector('#total').innerHTML = `<h3>${week1Total}</h3>`
-    document.querySelector('#total2').innerHTML = `<h3>${week2Total}</h3>`
+    document.querySelector('#total').innerHTML = `<h3 class="total">${week1Total}</h3>`
+    document.querySelector('#total2').innerHTML = `<h3 class="total">${week2Total}</h3>`
     totalHoursPrint = week1Total + week2Total;
     if (totalHoursPrint != totalHours) {
         document.querySelector('#update').innerHTML = `<p class="m-0 pb-1 text-danger"><b>Not updated!</b></p>`
@@ -73,8 +73,8 @@ function updateTimecard() { // This function displays the current hour.
 function computeSalary() { // Multiply salary amount by week total to get grand total.
     totalHours = totalHoursPrint;
     grandTotal = hourlyWage * totalHours;
-    document.querySelector('#salary').innerHTML = `<h2>$${hourlyWage}.00/hr x ${totalHoursPrint} hrs = $${grandTotal}.00</h2>`
     document.querySelector('#update').innerHTML = `<p class="m-0 pb-1 text-success"><b>Up to date!</b></h4>`
+    document.querySelector('#salary').innerHTML = `<h2><b>$${hourlyWage}.00/hr x ${totalHoursPrint} hrs = $${grandTotal}.00</b></h2>`
 
 }
 

@@ -10,3 +10,7 @@ body {
     background-color: lightgoldenrodyellow;
     color: rgb(131, 96, 8);
 }
+
+.total {
+    font-size: 48px;
+}
