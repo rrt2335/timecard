@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -25,35 +27,37 @@
             </div>
             <div class="col-6 col-lg-2">
                 <h2>Monday</h2>
-                <button onclick="addHour('weekOne', 'Monday')">+</button>
+                <button class="btn btn-outline-light text-white" onclick="addHour('weekOne', 'Monday')">+</button>
                 <h3 id="one">0</h3>
-                <button onclick="decreaseHour('weekOne', 'Monday')">-</button>
+                <button class="btn btn-outline-light text-white" onclick="decreaseHour('weekOne', 'Monday')">-</button>
             </div>
             <div class="col-6 col-lg-2">
                 <h2>Tuesday</h2>
-                <button onclick="addHour('weekOne', 'Tuesday')">+</button>
+                <button class="btn btn-outline-light text-white" onclick="addHour('weekOne', 'Tuesday')">+</button>
                 <h3 id="two">0</h3>
-                <button onclick="decreaseHour('weekOne', 'Tuesday')">-</button>
+                <button class="btn btn-outline-light text-white" onclick="decreaseHour('weekOne', 'Tuesday')">-</button>
             </div>
             <div class="col-6 col-lg-2">
                 <h2>Wednesday</h2>
-                <button onclick="addHour('weekOne', 'Wednesday')">+</button>
+                <button class="btn btn-outline-light text-white" onclick="addHour('weekOne', 'Wednesday')">+</button>
                 <h3 id="three">0</h3>
-                <button onclick="decreaseHour('weekOne', 'Wednesday')">-</button>
+                <button class="btn btn-outline-light text-white"
+                    onclick="decreaseHour('weekOne', 'Wednesday')">-</button>
             </div>
             <div class="col-6 col-lg-2">
                 <h2>Thursday</h2>
-                <button onclick="addHour('weekOne', 'Thursday')">+</button>
+                <button class="btn btn-outline-light text-white" onclick="addHour('weekOne', 'Thursday')">+</button>
                 <h3 id="four">0</h3>
-                <button onclick="decreaseHour('weekOne', 'Thursday')">-</button>
+                <button class="btn btn-outline-light text-white"
+                    onclick="decreaseHour('weekOne', 'Thursday')">-</button>
             </div>
             <div class="col-6 col-lg-2">
                 <h2>Friday</h2>
-                <button onclick="addHour('weekOne', 'Friday')">+</button>
+                <button class="btn btn-outline-light text-white" onclick="addHour('weekOne', 'Friday')">+</button>
                 <h3 id="five">0</h3>
-                <button onclick="decreaseHour('weekOne', 'Friday')">-</button>
+                <button class="btn btn-outline-light text-white" onclick="decreaseHour('weekOne', 'Friday')">-</button>
             </div>
-            <div id="total-wk1" class="col-2 d-flex align-items-center justify-content-center">
+            <div id="total-wk1" class="col-2 d-flex align-items-center justify-content-left">
                 <h3 class="total" id="total">0</h3>
             </div>
         </div>
@@ -66,35 +70,37 @@
             </div>
             <div class="col-6 col-lg-2">
                 <h2>Monday</h2>
-                <button onclick="addHour('weekTwo', 'Monday')">+</button>
+                <button class="btn btn-outline-light text-white" onclick="addHour('weekTwo', 'Monday')">+</button>
                 <h3 id="six">0</h3>
-                <button onclick="decreaseHour('weekTwo', 'Monday')">-</button>
+                <button class="btn btn-outline-light text-white" onclick="decreaseHour('weekTwo', 'Monday')">-</button>
             </div>
             <div class="col-6 col-lg-2">
                 <h2>Tuesday</h2>
-                <button onclick="addHour('weekTwo', 'Tuesday')">+</button>
+                <button class="btn btn-outline-light text-white" onclick="addHour('weekTwo', 'Tuesday')">+</button>
                 <h3 id="seven">0</h3>
-                <button onclick="decreaseHour('weekTwo', 'Tuesday')">-</button>
+                <button class="btn btn-outline-light text-white" onclick="decreaseHour('weekTwo', 'Tuesday')">-</button>
             </div>
             <div class="col-6 col-lg-2">
                 <h2>Wednesday</h2>
-                <button onclick="addHour('weekTwo', 'Wednesday')">+</button>
+                <button class="btn btn-outline-light text-white" onclick="addHour('weekTwo', 'Wednesday')">+</button>
                 <h3 id="eight">0</h3>
-                <button onclick="decreaseHour('weekTwo', 'Wednesday')">-</button>
+                <button class="btn btn-outline-light text-white"
+                    onclick="decreaseHour('weekTwo', 'Wednesday')">-</button>
             </div>
             <div class="col-6 col-lg-2">
                 <h2>Thursday</h2>
-                <button onclick="addHour('weekTwo', 'Thursday')">+</button>
+                <button class="btn btn-outline-light text-white" onclick="addHour('weekTwo', 'Thursday')">+</button>
                 <h3 id="nine">0</h3>
-                <button onclick="decreaseHour('weekTwo', 'Thursday')">-</button>
+                <button class="btn btn-outline-light text-white"
+                    onclick="decreaseHour('weekTwo', 'Thursday')">-</button>
             </div>
             <div class="col-6 col-lg-2">
                 <h2>Friday</h2>
-                <button onclick="addHour('weekTwo', 'Friday')">+</button>
+                <button class="btn btn-outline-light text-white" onclick="addHour('weekTwo', 'Friday')">+</button>
                 <h3 id="ten">0</h3>
-                <button onclick="decreaseHour('weekTwo', 'Friday')">-</button>
+                <button class="btn btn-outline-light text-white" onclick="decreaseHour('weekTwo', 'Friday')">-</button>
             </div>
-            <div id="total-wk2" class="col-2 d-flex align-items-center justify-content-center">
+            <div id="total-wk2" class="col-2 d-flex align-items-center justify-content-left">
                 <h3 class="total" id="total2">0</h3>
             </div>
         </div>
@@ -103,9 +109,9 @@
         <!-- Salary -->
         <div class="text-center row">
             <div class="col-12">
-                <p class="col-12 m-0 pb-1 text-success" id="update"></p>
-                <button onclick="computeSalary()">Calculate pay!</button>
-                <h2 class="col-12 pt-2" id="salary"><b>Salary: $0</b></h2>
+                <button class="btn btn-primary shadow" onclick="computeSalary()">Calculate pay</button>
+                <p class="col-12 m-0 pt-2" id="update"></p>
+                <h2 class="col-12" id="salary"><b>Salary: $0</b></h2>
             </div>
         </div>
 

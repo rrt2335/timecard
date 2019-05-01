@@ -7,10 +7,15 @@ h2 {
 }
 
 body {
-    background-color: lightgoldenrodyellow;
-    color: rgb(131, 96, 8);
+    background-color: blue;
+    color: white;
+    text-shadow: 0 2px 2px black;
 }
 
 .total {
     font-size: 48px;
+}
+
+hr {
+    background-color: white;
 }
