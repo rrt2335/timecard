@@ -21,7 +21,7 @@ let daysOfWeek = {
 
 let week1Total = 0;
 let week2Total = 0;
-let hourlyWage = 23;
+let hourlyWage = 0;
 let grandTotal = 0;
 let totalHours = 0;
 let totalHoursPrint = 0;
@@ -44,6 +44,19 @@ function decreaseHour(week, day, hour) {
     updateTimecard();
 }
 
+function addDollar() {
+    hourlyWage++;
+    updateTimecard();
+}
+
+function decreaseDollar() {
+    if (hourlyWage > 0) {
+        hourlyWage--;
+    }
+    updateTimecard();
+}
+
+
 function addDailyHours() { // Add Mon.-Fri. hours to get the weekly total.
     week1Total = daysOfWeek["weekOne"]["Monday"] + daysOfWeek["weekOne"]["Tuesday"] + daysOfWeek["weekOne"]["Wednesday"] + daysOfWeek["weekOne"]["Thursday"] + daysOfWeek["weekOne"]["Friday"];
     week2Total = daysOfWeek["weekTwo"]["Monday"] + daysOfWeek["weekTwo"]["Tuesday"] + daysOfWeek["weekTwo"]["Wednesday"] + daysOfWeek["weekTwo"]["Thursday"] + daysOfWeek["weekTwo"]["Friday"];
@@ -51,6 +64,7 @@ function addDailyHours() { // Add Mon.-Fri. hours to get the weekly total.
 
 function updateTimecard() { // This function displays the current hour.
     addDailyHours();
+    document.querySelector('#hourlyWage').innerHTML = `<h4>$${hourlyWage}</h4>`
     document.querySelector('#one').innerHTML = `<h3>${daysOfWeek["weekOne"]["Monday"]}</h3>`
     document.querySelector('#two').innerHTML = `<h3>${daysOfWeek["weekOne"]["Tuesday"]}</h3>`
     document.querySelector('#three').innerHTML = `<h3>${daysOfWeek["weekOne"]["Wednesday"]}</h3>`
@@ -75,10 +89,8 @@ function computeSalary() { // Multiply salary amount by week total to get grand 
     grandTotal = hourlyWage * totalHours;
     document.querySelector('#update').innerHTML = `<p class="update m-0 pb-1"><i class="fas fa-check text-success"></i><b> Up to date!</b></p>`
     document.querySelector('#salary').innerHTML = `<h2><b>$${hourlyWage}.00/hr x ${totalHoursPrint} hrs = $${grandTotal}.00</b></h2>`
-
 }
 
 updateTimecard();
-
 
 console.log("Finish");
